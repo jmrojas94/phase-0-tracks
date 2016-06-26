@@ -3,6 +3,24 @@
 ## Form
 Defines a form.
 
+## Name
+Names the tag.
+
+## Action
+Specifies where to send the form data.
+
+## Method
+Specifies how to send form data.
+
+## Type
+Defines the type of input.
+
+## Placeholder
+Gives a placeholder in an empty field.
+
+## Value
+Defines the value of an option.
+
 ## Fieldset
 Groups related elements in a form.
 
