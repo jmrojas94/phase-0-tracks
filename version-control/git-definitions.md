@@ -10,3 +10,4 @@ A branch is a copy of a project and you would use a branch so you can edit a pro
 A commit is a save point in a git project and a good commit message is one that is clear, present tense and gets the point across.
 * What is a merge conflict? 
 When your current branch has commits that are not in the master branch.
+HI!
