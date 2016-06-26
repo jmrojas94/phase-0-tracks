@@ -4,8 +4,41 @@
 	<title></title>
 </head>
 <body>
-	<form>
-		
+	<form name="user info" action="success.html" method="post">
+		<fieldset>
+			<div>
+				<select name="prefix">
+					<option value="prefix name">Mr.</option>
+					<option value="prefix name">Ms.</option>
+					<option value="prefix name">Mrs.</option>
+				</select>
+			</div>
+			<div>
+				<label>Full Name:</label>
+				<input type="text" name="fullname">
+			</div>
+				<label>About You:</label>
+			<div>
+				<textarea name="message" rows="5" cols="30">
+				Tell us about yourself!
+				</textarea>
+			</div>
+		</fieldset>
+		<fieldset>
+			<div>
+				<label>Email:</label>
+				<input type="email" name="email">
+			</div>
+			<div>
+				<label>Password:</label>
+				<input type="password" name="password">
+			</div>
+			<div>
+				<input type="checkbox" name="agree">
+				Would you like us to save your information?
+			</div>
+		</fieldset>
+		<button type="submit">Submit</button>
 	</form>
 </body>
 </html>
