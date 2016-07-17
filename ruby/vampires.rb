@@ -12,3 +12,5 @@ wants_garlic_bread = gets.chomp.downcase
 
 puts "Would you like to enroll in the company's health insurance? (yes/no)"
 wants_insurance = gets.chomp.downcase
+
+puts "#{name} #{age} #{birth_year} #{wants_insurance} #{wants_garlic_bread}"
