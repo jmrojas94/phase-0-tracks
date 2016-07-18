@@ -59,29 +59,9 @@ while index < employees
 	else 
 		puts "Results inconclusive."
 	end
-
-# 	puts "Now for allergies..."
-# allergies = nil
-# red_flag = false
-# until red_flag == true
-# 	puts "Any other allergies we should know about? Input one at a time. When finished, type done"
-# allergies = gets.chomp
-# if allergies == "sunshine"
-# 	red_flag = true
-# elsif allergies == "done"
-# 	red_flag = true
-# else
-# 	red_flag = false
-# end
-# end
-
-# if allergies == "sunshine"
-# 	puts "Probably a vampire!!!!!!!!!!!"
-# else
-# 	puts "Thanks for the heads up!"
-# end
-
+	
 	index +=1
 
+	puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
 end
 		
