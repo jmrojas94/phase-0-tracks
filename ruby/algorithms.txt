@@ -1,0 +1,35 @@
+Elevator Robot
+
+- Press elevator button in the direction you want to go.
+- If up,
+	- Press the up arrow.
+- Else
+	- Press the down arrow.
+- Enter elevator.
+- Find the buttons.
+- If you find the floor you want,
+	- Press the button for that floor.
+- Until floor is reached,
+	- Wait in the elevator.
+- When the floor is reached,
+	- Exit the elevator.
+- End.
+
+Making Coffee
+
+- Look in cabinet for coffee.
+- If coffee machine is empty,
+	- Fill it with coffee.
+- Else
+	- Empty used coffee and replace filter.
+- Until coffee finishes brewing,
+	- Wait.
+- When coffee finishes, remove pot.
+- Fill cup with coffee.
+- If you like sugar,
+	- Use sugar.
+- Elsif you like cream,
+	- Use cream.
+- Else
+	- Drink it black
+- End.
