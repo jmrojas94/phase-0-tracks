@@ -1,5 +1,5 @@
 # Alias Generator
-# - Define a method that takes a name as an argument.
+# - Define a method that asks for a full name.
 # - Make the name lowercase.
 # - Swap the first and last name.
 # - Split the letters in the name.
@@ -16,3 +16,24 @@
 # - For each name,
 # 	- Return "#{name} is now #{alias}."
 # - Exit program.
+
+def alias_manager
+
+	puts "Hello! Welcome to our alias manager."
+
+	puts "-------------------------------------"
+
+	puts "What is your first name?"
+	first_name = gets.chomp.downcase
+
+	puts "------------------------------------"
+
+	puts "What is your last name?"
+	last_name = gets.chomp.downcase
+
+	full_name = [first_name, last_name]
+
+
+end
+
+alias_manager
