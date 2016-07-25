@@ -41,4 +41,23 @@ my_playlist = {
 }
 
 puts "My favorite songs in the hardcore genre:"
-p my_playlist[:hardcore]
+p my_playlist[:hardcore][:favorite_songs]
+
+puts "-----------------------------------------"
+
+puts "Third favorite song by my favorite pop-punk band:"
+p my_playlist[:pop_punk][:favorite_songs][2]
+
+puts "-----------------------------------------"
+
+puts "I forgot to add a song to my favorite hardcore band."
+my_playlist[:hardcore][:favorite_songs].push("Cowardice")
+p my_playlist[:hardcore][:favorite_songs]
+
+puts "-----------------------------------------"
+
+puts "I actually saw my favorite hip-hop artist once..."
+my_playlist[:hip_hop][:times_seen] = 1
+
+puts "Times I saw him:"
+p my_playlist[:hip_hop][:times_seen]
