@@ -10,15 +10,8 @@
 # 	- Find all of the consonants.
 # 		- Change consonants to the next consonant in the alphabet.
 # 	- Capitalize the new name.
-# 	- Return the new name.
-# 	- Ask user if a new name is wanted.
-# 		- Run alias generator until user says "quit".
-# 	- Store the names and aliases in a hash.
-# 	- For each name,
-# 		- Return "#{name} is now #{alias}."
+# 	- Return "#{name} is now #{alias}."
 # - Exit program.
-
-def alias_manager
 
 puts "Hello! Welcome to our alias manager."
 
@@ -34,6 +27,9 @@ last_name = gets.chomp.downcase
 
 full_name = [last_name, first_name]
 
+def alias_manager(full_name)
+
+
 vowels = "aeiou".split('')
 consonants = "bcdfghjklmnpqrstvwxyz".split('')
 
@@ -45,9 +41,9 @@ full_name[0].split('').each do |letter|
 		elsif letter == "z"
 		new_name << "b"
 		elsif	vowels.include?(letter)
-		new_name << vowels[vowels.index(letter)+1]
+		new_name << vowels[vowels.index(letter).next]
 	else
-		new_name << consonants[consonants.index(letter)+1]
+		new_name << consonants[consonants.index(letter).next]
 	end
 end
 
@@ -59,9 +55,9 @@ full_name[1].split('').each do |letter|
 		elsif letter == "z"
 		new_name << "b"
 		elsif	vowels.include?(letter)
-		new_name << vowels[vowels.index(letter)+1]
+		new_name << vowels[vowels.index(letter).next]
 	else
-		new_name << consonants[consonants.index(letter)+1]
+		new_name << consonants[consonants.index(letter).next]
 	end
 end
 
@@ -71,4 +67,5 @@ new_alias = new_name.split(/(\W)/).each {|name| name.capitalize!}
 puts "#{full_name[1].capitalize} #{full_name[0].capitalize}'s new identity is #{new_alias[0]} #{new_alias[2]}."
 
 end
-alias_manager
+
+alias_manager(full_name)
