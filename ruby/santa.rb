@@ -1,5 +1,8 @@
 class Santa
 
+	attr_reader :ethnicity, :age, :reindeer_ranking
+	attr_accessor :gender
+
 	def initialize(gender, ethnicity)
 		puts "Initializing Santa instance..."
 		@gender = gender
@@ -25,44 +28,44 @@ class Santa
 		@age += 1
 	end
 
-	#Setter Methods
-	def gender=(new_gender)
-		@gender = new_gender
-	end
+	# #Setter Methods
+	# def gender=(new_gender)
+	# 	@gender = new_gender
+	# end
 
-	#Getter Methods
-	def age
-		@age
-	end
+	# #Getter Methods
+	# def age
+	# 	@age
+	# end
 
-	def ethnicity
-		@ethnicity
-	end
+	# def ethnicity
+	# 	@ethnicity
+	# end
 
-	def reindeer_ranking
-		@reindeer_ranking
-	end
+	# def reindeer_ranking
+	# 	@reindeer_ranking
+	# end
 
-	def gender 
-		@gender
-	end
+	# def gender 
+	# 	@gender
+	# end
 
 end
 
-#Driver code
-# santas = Santa.new("male", "Latino")
-# santas.speak
-# santas.eat_milk_and_cookies("chocolate chip")
-# p santas
-# santas.celebrate_birthday
-# p santas.age
-# p santas.ethnicity
-# p santas.reindeer_ranking
-# santas.get_mad_at("Vixen")
-# p santas.reindeer_ranking
-# p santas.gender
-# santas.gender = ("Not Male")
-# p santas.gender
+# Driver code
+santas = Santa.new("male", "Latino")
+santas.speak
+santas.eat_milk_and_cookies("chocolate chip")
+p santas
+santas.celebrate_birthday
+p santas.age
+p santas.ethnicity
+p santas.reindeer_ranking
+santas.get_mad_at("Vixen")
+p santas.reindeer_ranking
+p santas.gender
+santas.gender = ("Not Male")
+p santas.gender
 
 # p santas
 
