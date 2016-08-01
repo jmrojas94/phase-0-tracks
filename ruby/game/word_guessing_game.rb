@@ -23,3 +23,31 @@
 # 	- Prompt user to pick a letter.
 # 	- Fill in blank
 # - Print congratulations or failure.
+
+class WordGame
+
+	attr_reader :word, :num_of_guesses, :placeholder
+
+	def initialize(word)
+		@word = word.downcase
+		@word_array = word.split('')
+		@num_of_guesses = word.length
+		@guess_count = 0
+		@guessed_letters = []
+		@game_over = false
+		@placeholder = ('- ' * @num_of_guesses)
+	end
+
+	def letter_guess(letter)
+
+	end
+
+	def placeholder_fill(letter)
+
+	end
+
+	def end_game
+
+	end
+
+end
