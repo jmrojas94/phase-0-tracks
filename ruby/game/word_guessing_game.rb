@@ -35,14 +35,24 @@ class WordGame
 		@guess_count = 0
 		@guessed_letters = []
 		@game_over = false
-		@placeholder = ('- ' * @num_of_guesses)
+		@placeholder = ('- ' * @num_of_guesses).split(' ')
 	end
 
-	def letter_guess(letter)
-
+	def guess(letter)
+		@guessed_letters.push(letter)
+		@guess_count += 1
 	end
 
-	def placeholder_fill(letter)
+	def fill_the_blank(letter)
+		if @word_array.include?(letter)
+			replace = @word_array.each_index.select {|i| @word_array[i] == letter}
+			replace.each do |i|
+				@placeholder[i] = letter
+			end
+			@placeholder.join(' ')
+		else
+			@placeholder.join(' ')
+		end
 
 	end
 

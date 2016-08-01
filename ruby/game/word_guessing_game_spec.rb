@@ -7,8 +7,13 @@ describe WordGame do
 		expect(game.num_of_guesses).to eq(5)
 	end
 
-	it "creates a placeholder for a word" do
-		expect(game.placeholder).to eq("- - - - - ")
+	it "stores guessed letter into guessed letter array and adds to guess count" do
+		expect(game.guess("f")).to eq(1)
+	end
+
+	it "fills letters in the placeholder if the right letter is chosen" do
+		expect(game.fill_the_blank("h")).to eq("h - - - -")
+		expect(game.fill_the_blank("d")).to eq("h - - - -")
 	end
 	
 end
