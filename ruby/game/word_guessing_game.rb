@@ -26,13 +26,12 @@
 
 class WordGame
 
-	attr_reader :word, :num_of_guesses, :placeholder
+	attr_reader :word, :num_of_guesses, :placeholder, :game_over
 
 	def initialize(word)
 		@word = word.downcase
 		@word_array = word.split('')
 		@num_of_guesses = word.length
-		@guess_count = 0
 		@guessed_letters = []
 		@game_over = false
 		@placeholder = ('- ' * @num_of_guesses).split(' ')
@@ -40,7 +39,7 @@ class WordGame
 
 	def guess(letter)
 		@guessed_letters.push(letter)
-		@guess_count += 1
+		@num_of_guesses -= 1
 	end
 
 	def fill_the_blank(letter)
@@ -53,11 +52,42 @@ class WordGame
 		else
 			@placeholder.join(' ')
 		end
-
 	end
 
 	def end_game
+		if @word_array == @guessed_letters
+			puts "Congratulations! The word was #{@word}!"
+			@game_over == true
+		elsif @num_of_guesses == 0
+			puts "WOW...#{@word}..."
+			@game_over == true
+		end
+		@game_over
+	end
+end
 
+
+puts "Welcome to our two-player guessing game!"
+puts "----------------------------------------"
+puts "Player 1, please enter a WORD!"
+word = gets.chomp
+
+game = WordGame.new(word)
+
+puts "Ok Player 2!"
+
+while game.num_of_guesses > 0
+
+	puts "Pick a letter!"
+	letter = gets.chomp
+
+	game.guess(letter)
+	p game.fill_the_blank(letter)
+
+	game.end_game
+	if game.game_over
+		puts "You still have #{game.num_of_guesses} times to guess left."
 	end
 
 end
+
