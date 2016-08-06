@@ -90,3 +90,23 @@ end
 
 #=======================================================================
 # Reflection Section
+
+What are the differences between the two different hash syntaxes shown in the state_data file?
+
+One is a hash rocket and the other is a symbol.
+
+What does require_relative do? How is it different from require?
+
+require_relative is a method that takes in a string with a file name that will be linked to the code. Require is the same thing however it takes in a string with a library or gem name and imports all data within.
+
+What are some ways to iterate through a hash?
+
+Using a method like .each or .map. 
+
+When refactoring virus_effects, what stood out to you about the variables, if anything?
+
+That the variables were instance variables that are available to be called throughout the class.
+
+What concept did you most solidify in this challenge?
+
+Using hashes, accessing them, iterating through them and refactoring. Another concept I learned was testing with "p".
