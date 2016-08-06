@@ -1,4 +1,4 @@
-// Release 0--------------------
+// Release 0--------------------------------------
 // Pseudocode
 // - Create a function that takes in an array.
 // - Initialize an empty string which will store the longest phrase.
@@ -19,6 +19,20 @@ function longestPhrase(array) {
 	console.log(currentLongestPhrase);
 }
 
+// Release 1--------------------------------------
+// Pseudocode
+// - Create a function that takes in two objects.
+// - Loop through the object.
+//  - If the two objects key match,
+//    - Return true.
+//  - Else,
+//    - Return false.
+
+
+
+
+
+// Driver Code------------------------------------
 var testArray = ["long phrase","longest phrase","longer phrase"]
 
 var testArray2 = ["lol", "lolololol", "lolol"]
