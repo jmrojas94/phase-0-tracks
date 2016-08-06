@@ -19,47 +19,42 @@ class VirusPredictor
 
   # This method takes in the data from each of the private methods below (predicted deaths and speed of spread) and is used to call the data outside of the class.
   def virus_effects
-    predicted_deaths(@population_density, @population, @state)
-    speed_of_spread(@population_density, @state)
+    predicted_deaths
+    speed_of_spread
   end
 
   private
 
   # This data takes in population density, population and state name and uses conditional statements to find predicted number of deaths by comparing population density with a given conditional integer and then multiplies the population by a given number to equal number of deaths, then prints out a statement with the state and number of deaths.
-  def predicted_deaths(population_density, population, state)
-    # predicted deaths is solely based on population density
-    if @population_density >= 200
-      number_of_deaths = (@population * 0.4).floor
-    elsif @population_density >= 150
-      number_of_deaths = (@population * 0.3).floor
-    elsif @population_density >= 100
-      number_of_deaths = (@population * 0.2).floor
-    elsif @population_density >= 50
-      number_of_deaths = (@population * 0.1).floor
-    else
-      number_of_deaths = (@population * 0.05).floor
-    end
+  def predicted_deaths
+    number_of_deaths = 0.0
+    density = {200 => 0.4, 150 => 0.3, 100 => 0.2, 50 => 0.1, 0 => 0.5}
 
+    density.each do |average, multiplier|
+      if @population_density >= average
+        number_of_deaths = (@population * multiplier).floor
+      end
+    end
     print "#{@state} will lose #{number_of_deaths} people in this outbreak"
 
   end
 
   # This method takes in the population density and state data and uses conditional statements to find the speed of spread by adding a number to the speed based on the population density.
-  def speed_of_spread(population_density, state) #in months
+  def speed_of_spread #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
-    speed = 0.0
+    speed = 
 
-    if @population_density >= 200
-      speed += 0.5
-    elsif @population_density >= 150
-      speed += 1
-    elsif @population_density >= 100
-      speed += 1.5
+    if @population_density >= 200 
+      0.5
+    elsif @population_density >= 150 
+      1
+    elsif @population_density >= 100 
+      1.5
     elsif @population_density >= 50
-      speed += 2
+      2
     else
-      speed += 2.5
+      2.5
     end
 
     puts " and will spread across the state in #{speed} months.\n\n"
@@ -87,29 +82,31 @@ end
 # alaska.virus_effects
 
 STATE_DATA.each do |state_name, state_info|
-# STATE_DATA.each do |state, population|
-  
-  # VirusPredictor.new(string, float, integer)
-  
-  
-  
-   state = VirusPredictor.new(state_name,
-      state_info[:population_density],
-      state_info[:population])
-  # p state_name
-  # p state_info
-  # p state_info[:population_density]
-  # p STATE_DATA["state"][:population_density]
+  state = VirusPredictor.new(state_name, 
+    state_info[:population_density], 
+    state_info[:population])
     state.virus_effects
 end
 
-
-# when initializing a new object (with the .new method) you are passing 3 parameters, which sets the state of the object
-# 1. state name, which is a string
-# 2. population density for that state, which is a float
-# 3. population for that state, which is an integer
-
-
-
 #=======================================================================
 # Reflection Section
+
+# What are the differences between the two different hash syntaxes shown in the state_data file?
+
+# One is a hash rocket and the other is a symbol.
+
+# What does require_relative do? How is it different from require?
+
+# require_relative is a method that takes in a string with a file name that will be linked to the code. Require is the same thing however it takes in a string with a library or gem name and imports all data within.
+
+# What are some ways to iterate through a hash?
+
+# Using a method like .each or .map. 
+
+# When refactoring virus_effects, what stood out to you about the variables, if anything?
+
+# That the variables were instance variables that are available to be called throughout the class.
+
+# What concept did you most solidify in this challenge?
+
+# Using hashes, accessing them, iterating through them and refactoring. Another concept I learned was testing with "p".
