@@ -37,6 +37,16 @@ function objectMatch(object1, object2) {
   return false
 }
 
+// Release 2-----------------------------------------
+// Pseudocode
+// - Create a function that takes in an integer.
+// - Create an array of the alphabet.
+// - Create an empty array.
+// - Loop through the alphabet as many times as the integer says.
+//   - Create a random word with a length between 1 and 10.
+//   - Store words in empty array.
+// - Return random word array.
+
 
 
 // Driver Code------------------------------------
