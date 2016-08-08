@@ -10,13 +10,13 @@
 // - Print out the longest phrase. 
 
 function longestPhrase(array) {
-	currentLongestPhrase = '';
+	var currentLongestPhrase = '';
 	for (var i = 0; i < array.length; i++) {
 		if (array[i].length > currentLongestPhrase.length) {
 			currentLongestPhrase = array[i];
 		}
 	}
-	console.log(currentLongestPhrase);
+	return currentLongestPhrase;
 }
 
 // Release 1--------------------------------------
@@ -37,7 +37,7 @@ function objectMatch(object1, object2) {
   return false
 }
 
-// Release 2-----------------------------------------
+// Release 2--------------------------------------
 // Pseudocode
 // - Create a function that takes in an integer.
 // - Create an array of the alphabet.
@@ -47,6 +47,20 @@ function objectMatch(object1, object2) {
 //   - Store words in empty array.
 // - Return random word array.
 
+function randomWords(integer) {
+  var randomWordArray = [];
+  var alphabet = 'abcdefghijklmnopqrstuvwxyz'
+  for (var i = 0; i < integer; i++) {
+    var randomWord = '';
+    var length = Math.floor(Math.random() * 10) + 1;
+    for(var x = 0; x < length; x++) {
+      randomWord += alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+    }
+    randomWordArray.push(randomWord)
+  }
+  return randomWordArray
+}
+
 
 
 // Driver Code------------------------------------
@@ -54,10 +68,16 @@ function objectMatch(object1, object2) {
 
 // var testArray2 = ["lol", "lolololol", "lolol"]
 
-// longestPhrase(testArray);
-// longestPhrase(testArray2);
+// console.log(longestPhrase(testArray));
+// console.log(longestPhrase(testArray2));
 
-var testObject1 = {name: "Steven", age: 54};
-var testObject2 = {name: "Tamir", age: 54};
+// var testObject1 = {name: "Steven", age: 54};
+// var testObject2 = {name: "Tamir", age: 54};
 
-console.log(objectMatch(testObject1, testObject2));
+// console.log(objectMatch(testObject1, testObject2));
+
+// console.log(randomWords(4));
+
+for (var i = 0; i < 10; i++) {
+  console.log(longestPhrase(randomWords(3)))
+}
