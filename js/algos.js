@@ -23,19 +23,31 @@ function longestPhrase(array) {
 // Pseudocode
 // - Create a function that takes in two objects.
 // - Loop through the object.
-//  - If the two objects key match,
+//  - If any of the two objects key match,
 //    - Return true.
 //  - Else,
 //    - Return false.
 
-
+function objectMatch(object1, object2) {
+  for (var key in object1) {
+    if (object1[key] == object2[key]) {
+      return true
+    }
+  }
+  return false
+}
 
 
 
 // Driver Code------------------------------------
-var testArray = ["long phrase","longest phrase","longer phrase"]
+// var testArray = ["long phrase","longest phrase","longer phrase"]
 
-var testArray2 = ["lol", "lolololol", "lolol"]
+// var testArray2 = ["lol", "lolololol", "lolol"]
 
-longestPhrase(testArray);
-longestPhrase(testArray2);
+// longestPhrase(testArray);
+// longestPhrase(testArray2);
+
+var testObject1 = {name: "Steven", age: 54};
+var testObject2 = {name: "Tamir", age: 54};
+
+console.log(objectMatch(testObject1, testObject2));
