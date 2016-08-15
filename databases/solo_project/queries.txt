@@ -61,3 +61,61 @@ sqlite> SELECT * FROM bands;
 6|Hot Water Music|true|7|5
 7|David Ramirez|false|6|6
 8|Converge|true|8|1
+
+CROSS JOIN ====================================
+
+sqlite> SELECT bands.id, band_name FROM bands CROSS JOIN record_labels;
+2|Underoath
+2|Underoath
+2|Underoath
+2|Underoath
+2|Underoath
+2|Underoath
+3|Gaslight Anthem
+3|Gaslight Anthem
+3|Gaslight Anthem
+3|Gaslight Anthem
+3|Gaslight Anthem
+3|Gaslight Anthem
+4|Expire
+4|Expire
+4|Expire
+4|Expire
+4|Expire
+4|Expire
+5|Polar Bear Club
+5|Polar Bear Club
+5|Polar Bear Club
+5|Polar Bear Club
+5|Polar Bear Club
+5|Polar Bear Club
+6|Hot Water Music
+6|Hot Water Music
+6|Hot Water Music
+6|Hot Water Music
+6|Hot Water Music
+6|Hot Water Music
+7|David Ramirez
+7|David Ramirez
+7|David Ramirez
+7|David Ramirez
+7|David Ramirez
+7|David Ramirez
+8|Converge
+8|Converge
+8|Converge
+8|Converge
+8|Converge
+8|Converge
+
+OUTER JOIN===================================
+
+sqlite> SELECT bands.id, band_name FROM bands LEFT OUTER JOIN record_labels ON bands.record_label_id = record_labels.id;
+2|Underoath
+3|Gaslight Anthem
+4|Expire
+5|Polar Bear Club
+6|Hot Water Music
+7|David Ramirez
+8|Converge
+sqlite>
