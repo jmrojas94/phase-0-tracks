@@ -1,0 +1,23 @@
+Paired with Amanda Steckler
+/// 8.4 - Many to Many Relationships
+
+
+2) You've joined two tables before. How do you join three?
+
+sqlite> SELECT reviews.id, reviews.stars, reviews.comment, reviews.business_id, businesses.name, reviews.user_id, users.first_name, users.last_name FROM reviews JOIN businesses ON reviews.business_id = businesses.id JOIN users on reviews.user_id = users.id;
+1|3|This place was decent|3|The Beagle Nightclub|1|Bradford|Pitt
+2|2|Horrible pricing|2|Amir's Towing|2|Mandy|Kaling
+3|5|Married Bradford Pitt here|1|Grundy Hollow Wedding Chapel|3|Angela|Jolie
+
+
+3) There are some repetitive columns if we choose to view all fields. Choose instead to just view the user's names, the business name, the star rating, and the comment.
+
+sqlite> SELECT reviews.stars, reviews.comment, businesses.name, users.first_name, users.last_name FROM reviews JOIN businesses on reviews.business_id = businesses.id JOIN users on reviews.user_id = users.id;
+3|This place was decent|The Beagle Nightclub|Bradford|Pitt
+2|Horrible pricing|Amir's Towing|Mandy|Kaling
+5|Married Bradford Pitt here|Grundy Hollow Wedding Chapel|Angela|Jolie
+
+
+4) How do you view the data of all three tables for just one particular business? 
+sqlite> SELECT reviews.id, reviews.stars, reviews.comment, reviews.business_id, businesses.name, reviews.user_id, users.first_name, users.last_name FROM reviews JOIN businesses ON reviews.business_id = businesses.id JOIN users on reviews.user_id = users.id WHERE businesses.name="The Beagle Nightclub";
+1|3|This place was decent|3|The Beagle Nightclub|1|Bradford|Pitt
