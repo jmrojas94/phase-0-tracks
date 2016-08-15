@@ -1,13 +1,63 @@
 Display the information in one table (either table is fine).
 
+sqlite> SELECT * FROM bands;
+1|Defeater|true|5|2
+2|Underoath|true|7|3
+3|Gaslight Anthem|true|6|4
+4|Expire|true|3|2
+5|Polar Bear Club|true|4|2
+6|Hot Water Music|true|7|5
+7|David Ramirez|false|6|6
+8|Converge|true|8|1
 
 Update an item that meets some condition (you can choose a condition that makes sense).
+
+sqlite> UPDATE bands SET number_of_albums=5 WHERE band_name = "Polar Bear Club";
+
+sqlite> SELECT * FROM bands;
+1|Defeater|true|5|2
+2|Underoath|true|7|3
+3|Gaslight Anthem|true|6|4
+4|Expire|true|3|2
+5|Polar Bear Club|true|5|2
+6|Hot Water Music|true|7|5
+7|David Ramirez|false|6|6
+8|Converge|true|8|1
 
 
 Display the information in both tables using one query.
 
+sqlite> SELECT * FROM bands, record_labels WHERE bands.record_label_id = record_labels.id;
+1|Defeater|true|5|2|2|Bridge 9
+2|Underoath|true|7|3|3|Tooth and Nail
+3|Gaslight Anthem|true|6|4|4|Side One Dummy
+4|Expire|true|3|2|2|Bridge 9
+5|Polar Bear Club|true|5|2|2|Bridge 9
+6|Hot Water Music|true|7|5|5|Rise
+7|David Ramirez|false|6|6|6|Indie
+8|Converge|true|8|1|1|Epitaph
 
 Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
 
+sqlite> SELECT bands.band_name, record_labels.label_name From bands, record_labels WHERE bands.record_label_id = record_labels.id;
+Defeater|Bridge 9
+Underoath|Tooth and Nail
+Gaslight Anthem|Side One Dummy
+Expire|Bridge 9
+Polar Bear Club|Bridge 9
+Hot Water Music|Rise
+David Ramirez|Indie
+Converge|Epitaph
 
 Delete an item that meets some condition (you can choose a condition that makes sense).
+
+sqlite> DELETE FROM bands WHERE id = 1;
+
+sqlite> SELECT * FROM bands;
+2|Underoath|true|7|3
+3|Gaslight Anthem|true|6|4
+4|Expire|true|3|2
+5|Polar Bear Club|true|5|2
+6|Hot Water Music|true|7|5
+7|David Ramirez|false|6|6
+8|Converge|true|8|1
